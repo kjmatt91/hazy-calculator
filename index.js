@@ -1,22 +1,31 @@
 function calculate(calculationSteps) {
   for (let i = 0; i < calculationSteps.length; i++) {
-    // if (calculationSteps[i] != NaN) {
-    //   Number.calculationSteps[i]
-    // }
     if (calculationSteps[i] === null) {
-      calculationSteps[i] = 0
+      return 0
     }
-    if ((calculationSteps[i] === undefined) || (calculationSteps[i] === '') || (isNaN(calculationSteps[i]))) {
-      return false
-    }
+    if ((calculationSteps[i] === undefined)) {
+      let cleanArray = calculationSteps.filter(Boolean)
 
-    return true
+      return cleanArray
+    }
+    if ((calculationSteps[i] === '') || (isNaN(calculationSteps[i]))) {
+      calculationSteps[i].splice(i, 1)
+
+      return calculate
+    }
+    let numOne = calculationSteps[0]
+    let operator = calculationSteps[1]
+    let numTwo = calculationSteps[2]
+
+    switch (operator) {
+      case '+': return numOne + numTwo
+      case '-': return numOne - numTwo
+      case '*': return numOne * numTwo
+      case '/': return numOne / numTwo
+    }
   }
 
-  // multiplies two numbers when one is stringified
-  // treats null values as zeroes and includes them in the calculation
-  // ignores undefined and empty string values and continues operation
-  // ignores non-numeric values  and continues operation
+
   return calculationSteps
 }
 
