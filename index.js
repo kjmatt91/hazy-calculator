@@ -1,17 +1,23 @@
 function calculate(calculationSteps) {
   for (let i = 0; i < calculationSteps.length; i++) {
+    // let cleanArray = []
+
     if (calculationSteps[i] === null) {
       return 0
     }
     if ((calculationSteps[i] === undefined)) {
-      let cleanArray = calculationSteps.filter(Boolean)
+      // cleanArray = calculationSteps.filter(Boolean)
+      calculationSteps = calculationSteps.filter(Boolean)
 
-      return cleanArray
+
+      // return calculate
     }
     if ((calculationSteps[i] === '') || (isNaN(calculationSteps[i]))) {
-      calculationSteps[i].splice(i, 1)
+      // calculationSteps = calculationSteps[i].splice(i, 1)
+      calculationSteps = calculationSteps.filter(Boolean)
 
-      return calculate
+      // return calculate
+      // return false
     }
     let numOne = calculationSteps[0]
     let operator = calculationSteps[1]
@@ -26,6 +32,7 @@ function calculate(calculationSteps) {
   }
 
 
+  // return cleanArray
   return calculationSteps
 }
 
