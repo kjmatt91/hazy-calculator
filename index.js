@@ -12,13 +12,15 @@ function calculate(calculationSteps) {
 
       // return calculate
     }
-    if (calculationSteps[i] === '' || isNaN(parseInt(calculationSteps[i]))) {
-      // calculationSteps = calculationSteps[i].splice(i, 1)
-      calculationSteps = calculationSteps.filter(Boolean)
+    // if (calculationSteps[i] === '' || isNaN(parseInt(calculationSteps[i]))) 
+    // if (!isNaN(calculationSteps[i])) {
 
-      return calculationSteps
+      // calculationSteps = calculationSteps[i].splice(i, 1)
+      // calculationSteps = calculationSteps.filter(Boolean)
+
+      // return calculationSteps
       // return false
-    }
+    // }
     let numOne = calculationSteps[0]
     let operator = calculationSteps[1]
     let numTwo = calculationSteps[2]
@@ -33,8 +35,6 @@ function calculate(calculationSteps) {
   }
 
 
-  // return cleanArray
-  return calculationSteps
 }
 
 module.exports = calculate
