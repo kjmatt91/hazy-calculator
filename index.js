@@ -12,11 +12,11 @@ function calculate(calculationSteps) {
 
       // return calculate
     }
-    if ((calculationSteps[i] === '') || (isNaN(calculationSteps[i]))) {
+    if (calculationSteps[i] === '' || isNaN(parseInt(calculationSteps[i]))) {
       // calculationSteps = calculationSteps[i].splice(i, 1)
       calculationSteps = calculationSteps.filter(Boolean)
 
-      // return calculate
+      return calculationSteps
       // return false
     }
     let numOne = calculationSteps[0]
@@ -28,6 +28,7 @@ function calculate(calculationSteps) {
       case '-': return numOne - numTwo
       case '*': return numOne * numTwo
       case '/': return numOne / numTwo
+      default: return NaN
     }
   }
 
