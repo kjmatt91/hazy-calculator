@@ -1,26 +1,17 @@
 function calculate(calculationSteps) {
-  for (let i = 0; i < calculationSteps.length; i++) {
-    // let cleanArray = []
+  // let operators = ['+', '-', '*', '/']
 
+  for (let i = 0; i < calculationSteps.length; i++) {
     if (calculationSteps[i] === null) {
       return 0
     }
     if ((calculationSteps[i] === undefined)) {
-      // cleanArray = calculationSteps.filter(Boolean)
       calculationSteps = calculationSteps.filter(Boolean)
-
-
-      // return calculate
     }
-    // if (calculationSteps[i] === '' || isNaN(parseInt(calculationSteps[i]))) 
-    // if (!isNaN(calculationSteps[i])) {
+    // if (typeof (calculationSteps[i]) === Number || calculationSteps[i] === operators) {
+    //   calculationSteps.splice(i, 1)
+    // } I'm fresh out of ideas
 
-      // calculationSteps = calculationSteps[i].splice(i, 1)
-      // calculationSteps = calculationSteps.filter(Boolean)
-
-      // return calculationSteps
-      // return false
-    // }
     let numOne = calculationSteps[0]
     let operator = calculationSteps[1]
     let numTwo = calculationSteps[2]
@@ -33,8 +24,6 @@ function calculate(calculationSteps) {
       default: return NaN
     }
   }
-
-
 }
 
 module.exports = calculate
